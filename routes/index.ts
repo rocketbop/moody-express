@@ -1,4 +1,4 @@
-const express = require('express');
+const express = require("express");
 const router = express.Router();
 const inventory = require("./../lib/inventory")
 
@@ -8,7 +8,7 @@ const inventory = require("./../lib/inventory")
 // Since we probably do not have this level of sophistication yet our ERP team opted to send inventory change events to the webhook
 // periodically, once every ten minutes, for any product that has changed during that window.
 // All of that is to say we are going expect an array of products with new inventory amounts, rather than one at a time.
-router.post('/webhooks/inventory_changed', function(req, res, next) {
+router.post("/webhooks/inventory_changed", function(req, res, next) {
   // Pass the parsed params to the inventory module for handling
   inventory.inventory_changed(req.body)
   // Return an empty head with 200 status

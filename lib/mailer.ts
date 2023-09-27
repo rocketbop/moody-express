@@ -1,11 +1,11 @@
-const nodemailer = require('nodemailer');
+const nodemailer = require("nodemailer");
 
 // Setup needed
 const transporter = nodemailer.createTransport({});
 
 const mailOptions = {
-  from: 'paul@example.com',
-  to: 'orders_team@example.com'
+  from: "paul@example.com",
+  to: "orders_team@example.com"
 };
 
 const generateInventoryList = (data) => {
@@ -13,9 +13,9 @@ const generateInventoryList = (data) => {
     const items = data.map(({ product_id, num_inventory }) => {
       return `Product: ${product_id}, Inventory: ${num_inventory}`;
     });
-    return items.join('\n');
+    return items.join("\n");
   } else {
-    return 'No items to display.';
+    return "No items to display.";
   }
 }
 
@@ -36,7 +36,7 @@ const notifyOrdersTeam = (inventoryData) => {
 
   transporter.sendMail(options, (error, info) => {
     if (error) {
-      console.error('Error:', error);
+      console.error("Error:", error);
     }
   });
 }

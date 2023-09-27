@@ -1,7 +1,7 @@
 const mailer = require("./../lib/mailer")
 
-describe('notify_orders_team_body', () => {
-  test('generates the notification message with inventory list', () => {
+describe("notify_orders_team_body", () => {
+  test("generates the notification message with inventory list", () => {
     const inventoryData = [{ "product_id": "blue_gummies", "num_inventory": 5 }];
     const expectedMessage = `
 Dear Team,

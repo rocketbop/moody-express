@@ -8,11 +8,11 @@ app.use(bodyParser.json());
 app.use(express.urlencoded({ extended: false }));
 app.use("/", index);
 
-jest.mock('./../lib/mailer');
+jest.mock("./../lib/mailer");
 describe("App", () => {
   beforeEach(() => {
     mockNotifyOrdersTeam = jest.fn();
-    require('./../lib/mailer').notify_orders_team = mockNotifyOrdersTeam;
+    require("./../lib/mailer").notify_orders_team = mockNotifyOrdersTeam;
   });
 
   test("runs", done => {

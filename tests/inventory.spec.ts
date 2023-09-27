@@ -1,13 +1,13 @@
 const inventory = require("./../lib/inventory")
 
-jest.mock('./../lib/mailer');
+jest.mock("./../lib/mailer");
 
 describe("inventory_change", () => {
   let mockNotifyOrdersTeam;
 
   beforeEach(() => {
     mockNotifyOrdersTeam = jest.fn();
-    require('./../lib/mailer').notify_orders_team = mockNotifyOrdersTeam;
+    require("./../lib/mailer").notify_orders_team = mockNotifyOrdersTeam;
   });
 
   describe("when the inventory for an item is below a threshold", () => {
